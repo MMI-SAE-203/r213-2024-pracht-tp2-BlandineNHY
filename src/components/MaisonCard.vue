@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { MaisonResponse } from '@/types'
+import type { MaisonResponse } from '@/pocketbase-types'
+import ImgPb from './ImgPb.vue';
 
 const props = defineProps<MaisonResponse>()
 
-defineProps<Personne>()
 </script>
 <template>
 
-    <div class="personne-card border-2 p-1">
+   <!--  <div class="personne-card border-2 p-1">
         <p>Maison : {{ nomMaison }}</p>
         <p>Prix : {{ prix }}</p>
         <p>Image: {{ image }}</p>
@@ -16,7 +16,7 @@ defineProps<Personne>()
         <p>Adresse: {{ adresse }}</p>
         <p>Surface: {{ surface }}</p>
         <p>Favori: {{ favori }}</p>
-    </div>
+    </div> -->
 
 
 
@@ -26,7 +26,7 @@ defineProps<Personne>()
             <div
                 class="w-[360px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500">
             </div>
-            <img src="pexels-binyamin-mellish-106399-1.jpeg"
+            <ImgPb :record="props" :filename="image"
                 class="w-[360px] h-[235px] absolute left-[-0.5px] top-[-24.5px] object-cover" />
         </div>
         <div
@@ -35,14 +35,14 @@ defineProps<Personne>()
                 <div class="flex-grow-0 flex-shrink-0 w-[249px] h-[75px]">
                     <div class="flex justify-start items-end w-[164.11px] absolute left-0 top-0 gap-0.5">
                         <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-indigo-500">
-                            $2,700
+                            ${{ prix }}
                         </p>
                         <p class="flex-grow-0 flex-shrink-0 w-[58px] h-8 text-base text-left text-gray-500">
                             /month
                         </p>
                     </div>
                     <p class="w-[249px] absolute left-0 top-[43px] text-2xl font-semibold text-left text-gray-900">
-                        Beverly Springfield
+                        {{ nomMaison }}
                     </p>
                 </div>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
