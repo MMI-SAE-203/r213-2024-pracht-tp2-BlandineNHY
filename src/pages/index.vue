@@ -81,7 +81,7 @@ import type { MaisonResponse } from '@/pocketbase-types'
     updated: '2024-04-11 14:35:53.525Z'
   }
 ] */
-const maisonsListe = await pb.collection('maison').getFullList();
+const maisonsListe = await pb.collection('maison').getFullList({filter: "favori = true"});
 </script>
 
 <template>
