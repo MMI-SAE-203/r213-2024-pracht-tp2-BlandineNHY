@@ -45,7 +45,7 @@ const props = defineProps<MaisonResponse>()
                         {{ nomMaison }}
                     </p>
                 </div>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                <svg width="48" height="48" viewBox="0 0 48 48" :fill="favori?'red':'none'" xmlns="http://www.w3.org/2000/svg"
                     class="flex-grow-0 flex-shrink-0 w-12 h-12" preserveAspectRatio="xMidYMid meet">
                     <circle cx="24" cy="24" r="23.25" fill="white" stroke="#E0E7FF" stroke-width="1.5"></circle>
                     <path
@@ -54,7 +54,7 @@ const props = defineProps<MaisonResponse>()
                 </svg>
             </div>
             <p class="self-stretch flex-grow-0 flex-shrink-0 w-80 text-base text-left text-gray-500">
-                2821 Lake Sevilla, Palm Harbor, TX
+                {{ adresse }}
             </p>
             <svg width="320" height="2" viewBox="0 0 320 2" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="self-stretch flex-grow-0 flex-shrink-0" preserveAspectRatio="xMidYMid meet">
@@ -78,7 +78,7 @@ const props = defineProps<MaisonResponse>()
                         </path>
                     </svg>
                     <div class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-1">
-                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">4</p>
+                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ nbChambres }}</p>
                         <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">Beds</p>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ const props = defineProps<MaisonResponse>()
                         </defs>
                     </svg>
                     <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-1">
-                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">2</p>
+                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ nbSdb }}</p>
                         <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">Bathrooms</p>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ const props = defineProps<MaisonResponse>()
                         </defs>
                     </svg>
                     <div class="flex justify-end items-center flex-grow-0 flex-shrink-0 relative gap-1">
-                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">6x7.5</p>
+                        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{surface}}</p>
                         <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">m²</p>
                     </div>
                 </div>
