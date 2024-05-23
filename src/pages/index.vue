@@ -3,7 +3,9 @@ import { pb } from '@/backend';
 import MaisonCard from '@/components/MaisonCard.vue';
 import type { MaisonResponse } from '@/pocketbase-types'
 
-/* const maisonsListe: MaisonResponse[] = 
+
+const maisonsListe: MaisonResponse[] = await pb.collection('maison').getFullList({filter: "favori = true"});
+/* 
 [
   {
     adresse: ' BESANCON secteur Cras',
@@ -80,8 +82,8 @@ import type { MaisonResponse } from '@/pocketbase-types'
     surface: 131,
     updated: '2024-04-11 14:35:53.525Z'
   }
-] */
-const maisonsListe = await pb.collection('maison').getFullList({filter: "favori = true"});
+]  */
+// const maisonsListe = await pb.collection('maison').getFullList({filter: "favori = true"});
 </script>
 
 <template>
